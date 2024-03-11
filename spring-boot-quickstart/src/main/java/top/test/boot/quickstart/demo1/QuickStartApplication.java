@@ -1,4 +1,4 @@
-package com.xingchong.demo1;
+package top.test.boot.quickstart.demo1;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
