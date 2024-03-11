@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: dev
+
+
+
+
+
+person:
+  name: wangwu
+  age : 20
+  happy : false
+  birthday : 2001/01/11
+  maps: {k1:v1,k2:v2}
+  lists:
+    - code
+    - girl
+    - music
+  dog:
+    name : "wangcai"
+    age : ${random.int{3,10}}

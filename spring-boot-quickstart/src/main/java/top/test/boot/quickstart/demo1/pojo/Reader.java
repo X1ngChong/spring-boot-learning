@@ -1,4 +1,4 @@
-package com.xingchong.demo1.pojo;
+package top.test.boot.quickstart.demo1.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

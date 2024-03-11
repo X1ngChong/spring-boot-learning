@@ -3,36 +3,42 @@ package com.test.boot.config.entity;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author JXS
  */
 @Data
 @Component
-@Validated
-//@ConfigurationProperties(prefix = "family")//整体前缀 sufix后缀
-@PropertySource(value = {"classpath:family.properties"})//加载外部配置文件
-public class Family {
+@PropertySource(value = {"classpath:employee.properties"})//加载外部配置文件
+public class Employee {
 
-//    @Value("${family.family-name}")
-    private String familyName;
+    /**
+     * 使用 SpEl读取 employee 的names属性,并分割字符串集合
+     */
+    @Value("#{'${employee.names}'.split(',')}")
+    private List<String> employeeName;
 
-//    @Value("${family.father}")
-    @Length(min=6,max = 20,message = "父亲名字必须是6-20位之间")
-    private String father;
 
-//    @Value("${family.mother}")
-    private String mother;
+    @Value("#{'${employee.names}'.split(',')[0]}")
+    private String firstName;
 
-//    @Value("${family.child}")
-    private String child;
+    @Value("#{${employee.ages}}")
+    private Map<String,Integer> employeeAge;
 
-    @Range(min=5,message = "家庭年限最少5年")
-    private Integer years;
+    @Value("#{${employee.ages}.one}")
+    private Integer firstAge;
+
+    @Value("#{systemProperties['java.home']}")
+    private String javaHome;
+
+    @Value("#{systemProperties['user.dir']}")
+    private String userDir;
 
 }

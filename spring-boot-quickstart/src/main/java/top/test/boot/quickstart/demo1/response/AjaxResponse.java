@@ -1,4 +1,4 @@
-package com.xingchong.demo1.response;
+package top.test.boot.quickstart.demo1.response;
 
 import lombok.Data;
 

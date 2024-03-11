@@ -1,13 +1,13 @@
-package com.xingchong.demo1.controller;
+package top.test.boot.quickstart.demo1.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.xingchong.demo1.pojo.Article;
-import com.xingchong.demo1.pojo.Reader;
-import com.xingchong.demo1.response.AjaxResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
+import top.test.boot.quickstart.demo1.pojo.Article;
+import top.test.boot.quickstart.demo1.pojo.Reader;
+import top.test.boot.quickstart.demo1.response.AjaxResponse;
 
 import java.util.Date;
 import java.util.List;

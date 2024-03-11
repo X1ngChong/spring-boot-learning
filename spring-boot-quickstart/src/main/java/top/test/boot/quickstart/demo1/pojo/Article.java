@@ -1,4 +1,4 @@
-package com.xingchong.demo1.pojo;
+package top.test.boot.quickstart.demo1.pojo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
