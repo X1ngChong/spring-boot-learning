@@ -25,7 +25,7 @@ class UserServiceTest {
 
     @Test
     void insert(){
-        UserDO userDO = new UserDO().setUsername("老刘").setPhone("110").setGender("男");
+        UserDO userDO = new UserDO().setUsername("老刘321").setPhone("110").setGender("男");
         int rs = userMapper.insert(userDO);
         //assertEquals(rs,1);
         //成功拿到回写的userId
@@ -33,37 +33,37 @@ class UserServiceTest {
     }
     @Test
     public void delete() {
-        userMapper.delete(new LambdaQueryWrapper<UserDO>().eq(UserDO::getUsername, "张三"));
+        userMapper.delete(new LambdaQueryWrapper<UserDO>().eq(UserDO::getUsername, "李四"));
     }
 
     @Test
     public void update() {
         //方式一: 根据id更新
-        userMapper.updateById(new UserDO().setId(1).setPhone("10086"));
-        //方式二: 左边是需要更新的值 右边是where条件
-        userMapper.update(new UserDO().setUsername("张三丰"), new LambdaQueryWrapper<UserDO>().eq(UserDO::getPhone, "10086"));
-        //方式三：不创建User对象
-        userMapper.update(null, new LambdaUpdateWrapper<UserDO>()
-                .set(UserDO::getCreateTime, LocalDateTime.now()).eq(UserDO::getUsername, "裴秀"));
+        userMapper.updateById(new UserDO().setId(3).setPhone("10086"));
+//        //方式二: 左边是需要更新的值 右边是where条件
+//        userMapper.update(new UserDO().setUsername("张三丰"), new LambdaQueryWrapper<UserDO>().eq(UserDO::getPhone, "10086"));
+//        //方式三：不创建User对象
+//        userMapper.update(null, new LambdaUpdateWrapper<UserDO>()
+//                .set(UserDO::getCreateTime, LocalDateTime.now()).eq(UserDO::getUsername, "裴秀"));
     }
 
     @Test
     public void select() {
-        //1、根据主键获取
-        UserDO userDO = userMapper.selectById(1);
-        System.out.println("********** 1 *************");
-        System.out.println(userDO);
-        //2、根据手机号获取单个
-        UserDO userDO1 = userMapper.selectOne(new LambdaQueryWrapper<UserDO>().eq(UserDO::getPhone, "13900002222"));
-        System.out.println("********** 2 *************");
-        System.out.println(userDO1);
+//        //1、根据主键获取
+//        UserDO userDO = userMapper.selectById(1);
+//        System.out.println("********** 1 *************");
+//        System.out.println(userDO);
+//        //2、根据手机号获取单个
+//        UserDO userDO1 = userMapper.selectOne(new LambdaQueryWrapper<UserDO>().eq(UserDO::getPhone, "13900002222"));
+//        System.out.println("********** 2 *************");
+//        System.out.println(userDO1);
         //3、获取集合
-        List<UserDO> userDOS = userMapper.selectList(new LambdaQueryWrapper<UserDO>().like(UserDO::getUsername, "小"));
+        List<UserDO> userDOS = userMapper.selectList(new LambdaQueryWrapper<UserDO>().like(UserDO::getUsername, "李四"));
         System.out.println("********** 3 *************");
         // System.out.println(userDOS);
-        List<UserDO> userDOS1 = userMapper.selectList(null);
-        System.out.println("********** 4 *************");
-        System.out.println(userDOS1);
+//        List<UserDO> userDOS1 = userMapper.selectList(null);
+//        System.out.println("********** 4 *************");
+//        System.out.println(userDOS1);
     }
 
     @Test

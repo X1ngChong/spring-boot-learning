@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+
+logging:
+  level:
+    root: info
+    top.test.log.controller: debug
+  file:
+    path: F:\baiduDownload\log
+    name: F:\baiduDownload\log\spring-boot-log.log
+  pattern:
+    console: '%red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger : %msg%n'
