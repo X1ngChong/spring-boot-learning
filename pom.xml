@@ -20,6 +20,7 @@
         <module>spring-boot-datebase</module>
         <module>spring-boot-mp</module>
         <module>spring-boot-log</module>
+        <module>spring-boot-exception</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
