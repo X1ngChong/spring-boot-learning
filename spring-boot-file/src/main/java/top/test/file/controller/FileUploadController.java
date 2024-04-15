@@ -57,22 +57,22 @@ public class FileUploadController {
         }
 
 
-        return request.getScheme() + "//" + request.getServerName() + ":" + request.getServerPort() + "/" + today + "/" + newFileName;
+        return request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/" + today + "/" + newFileName;
     }
 
 
     @PostMapping("/minio")
     public String minioUpload(MultipartFile file, HttpServletRequest request) {
-        String bucketName = "mqxu";
+        String bucketName = "bhui";
         ObjectWriteResponse owr = null;
         try (InputStream inputStream = file.getInputStream()) { // 获取 MultipartFile 的输入流
-            owr = minioTemplate.putObject(bucketName, "img/test123.jpg", inputStream);
+            owr = minioTemplate.putObject(bucketName, "img/test01.jpg", inputStream);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
         System.out.println(owr.object());
         System.out.println("http://43.137.12.232:9000/" + bucketName + "/" + owr.object());
         // 拼接可访问的地址
-        return request.getScheme() + "//" + request.getServerName() + ":" + request.getServerPort() + "/" + bucketName + "/" + owr.object();
+        return "http://43.137.12.232:9000/" + bucketName + "/" + owr.object();
     }
 }

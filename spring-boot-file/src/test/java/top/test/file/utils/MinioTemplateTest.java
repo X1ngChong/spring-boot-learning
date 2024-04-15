@@ -26,7 +26,7 @@ class MinioTemplateTest {
 
     @Test
     void makeBucket() throws Exception {
-       minioTemplate.makeBucket("hello");
+       minioTemplate.makeBucket("bhui");
     }
 
     @Test
