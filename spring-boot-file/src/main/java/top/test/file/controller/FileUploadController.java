@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import top.test.file.utils.MinioTemplate;
+import top.test.file.utils.OssTemplate;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,6 +32,9 @@ public class FileUploadController {
 
     @Resource
     private MinioTemplate minioTemplate;
+
+    @Resource
+    private OssTemplate ossTemplate;
 
     DateFormat df = new SimpleDateFormat("yyyyMMdd");
     @PostMapping("/native")
@@ -74,5 +78,15 @@ public class FileUploadController {
         System.out.println("http://43.137.12.232:9000/" + bucketName + "/" + owr.object());
         // 拼接可访问的地址
         return "http://43.137.12.232:9000/" + bucketName + "/" + owr.object();
+    }
+
+    /**
+     * oss 文件上传
+     * @param file 文件对象
+     * @return 文件上传后的地址
+     */
+    @PostMapping("/oss")
+    public String ossUpload(MultipartFile file) {
+        return ossTemplate.ossUpload(file);
     }
 }
