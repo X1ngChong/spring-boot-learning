@@ -5,3 +5,8 @@ spring:
   web:
     resources:
       static-locations: classpath:/static,${D:\classdemo\filedemo}
+
+minio:
+  endPoint: http://43.137.12.232:9000
+  accessKey: admin
+  sercretKey: admin123
