@@ -7,7 +7,7 @@ import top.test.excepiton.enums.ErrorCode;
 @Getter
 @Setter
 public class Result<T> {
-    private int code=0;
+    private int code = 0;
     private String msg = "success";
     private T data;
 

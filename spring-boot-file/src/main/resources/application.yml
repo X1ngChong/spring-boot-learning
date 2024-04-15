@@ -1,0 +1,7 @@
+file:
+  upload-path: D:\classdemo\filedemo
+
+spring:
+  web:
+    resources:
+      static-locations: classpath:/static,${D:\classdemo\filedemo}
