@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Result<T> {
-    private int code = 0;
+    private int code = 200;
     private String msg = "success";
     private T data;
 

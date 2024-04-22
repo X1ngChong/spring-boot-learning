@@ -18,7 +18,7 @@ public class ServerExceptionHandler {
 
     @ExceptionHandler(value = ServerException.class)
     public Result <?> handleServerException(ServerException e){
-        return Result.error(e.getCode(),e.getMessage());
+        return Result.error(e.getCode(),e.getMsg());
     }
 
     @ExceptionHandler(value = Exception.class)

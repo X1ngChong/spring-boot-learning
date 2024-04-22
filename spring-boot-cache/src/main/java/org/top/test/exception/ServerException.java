@@ -3,6 +3,9 @@ package org.top.test.exception;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+/**
+ * @author JXS
+ */
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class ServerException extends RuntimeException{

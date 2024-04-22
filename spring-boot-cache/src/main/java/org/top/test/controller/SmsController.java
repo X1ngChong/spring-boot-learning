@@ -6,7 +6,7 @@ import org.top.test.exception.Result;
 import org.top.test.service.SmsService;
 
 /**
- * @author JXS
+ * @author JXS 发送短信
  */
 @RestController
 @RequestMapping("/sms")
