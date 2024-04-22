@@ -10,3 +10,14 @@ spring:
           min-idle: 10 #连接池中的最小空闲连接,默认为8
           max-idle: 20 #连接池中的最大空闲连接,默认为0
           max-active: 100 #连接池最大连接数默认为 8
+
+#短信发送配置项
+hui:
+  sms:
+    ccp:
+      serverIp: app.cloopen.com
+      port: 8883
+      accountSId: 2c94811c8cd4da0a018f047893dd6ac0
+      accountToken: ba863fc92698483db67a3b920f3b906e
+      appId: 2c94811c8cd4da0a018f047895566ac7
+      templateId: 1 #使用了1号默认模板
