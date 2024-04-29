@@ -23,6 +23,7 @@
         <module>spring-boot-exception</module>
         <module>spring-boot-file</module>
         <module>spring-boot-cache</module>
+        <module>spring-boot-filter-interceptor</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
