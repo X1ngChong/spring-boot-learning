@@ -9,10 +9,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.top.test.interceptor.AuthenticationInterceptor;
-import org.top.test.interceptor.CustomInterceptor;
-import org.top.test.interceptor.LoggingInterceptor;
-import org.top.test.interceptor.PerformanceInterceptor;
+import org.top.test.interceptor.*;
 
 /**
  * @author mqxu
@@ -28,6 +25,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
     private final AuthenticationInterceptor authenticationInterceptor;
     private final LoggingInterceptor loggingInterceptor;
     private final PerformanceInterceptor performanceInterceptor;
+    private final ImageInterceptor imageInterceptor;
     @Bean
     public CorsFilter corsFilter() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -43,9 +41,10 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-      //  registry.addInterceptor(authenticationInterceptor);
+       registry.addInterceptor(authenticationInterceptor);
        // registry.addInterceptor(customInterceptor);
-        registry.addInterceptor(loggingInterceptor);
-        registry.addInterceptor(performanceInterceptor);
+        //registry.addInterceptor(loggingInterceptor);
+       // registry.addInterceptor(performanceInterceptor);
+        registry.addInterceptor(imageInterceptor).addPathPatterns("/user/oss");
     }
 }
