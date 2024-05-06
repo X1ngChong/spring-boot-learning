@@ -79,13 +79,13 @@ public class JwtUtil {
 
     public static void main(String[] args) {
         String token = createToken(10001,"zhangsan");
-        //boolean validate = validate("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE3MTQzNzY5MzAsIm5pY2tuYW1lIjoiemhhbmdzYW4iLCJleHAiOjE3MTQ1NDk3MzAsImlhdCI6MTcxNDM3NjkzMCwidXNlcklkIjoxMDAwMX0.h0WKQrEsRavLYM6g0T-94Wg-epYHb9kkJUZWFijkipg");
-        //System.out.println(validate);
-        //System.out.println(token);
-        //System.out.println(token);
-        //boolean validate = validate(token);
-        //System.out.println(validate);
-        //JSONObject payload = getPayload(token);
-        //System.out.println(payload);
+        boolean validate = validate("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE3MTQzNzY5MzAsIm5pY2tuYW1lIjoiemhhbmdzYW4iLCJleHAiOjE3MTQ1NDk3MzAsImlhdCI6MTcxNDM3NjkzMCwidXNlcklkIjoxMDAwMX0.h0WKQrEsRavLYM6g0T-94Wg-epYHb9kkJUZWFijkipg");
+        System.out.println(validate);
+        System.out.println(token);
+        System.out.println(token);
+       // boolean validate = validate(token);
+        System.out.println(validate);
+        JSONObject payload = getPayload(token);
+        System.out.println(payload);
     }
 }

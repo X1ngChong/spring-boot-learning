@@ -1,0 +1,9 @@
+spring:
+  mail:
+    host: smtp.qq.com
+    username: 1780473845@qq.com
+    password: rqdipubgpayjcebc #授权码
+    protocol: smtp #发送邮件的协议
+    default-encoding: UTF-8
+#    properties.mail.smtp.auth: true
+#    properties.mail.smtp.port: 456 #邮件发送端口
