@@ -24,17 +24,8 @@ public class MailService {
     private String fromValue;
 
     /**
-     * 发送简单文本
+     * 发送html文本
      */
-    public void sendSimpleMail(String to,String subject,String content){
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom(fromValue);
-        mailMessage.setTo(to);
-        mailMessage.setSubject(subject);
-        mailMessage.setText(content);
-        javaMailSender.send(mailMessage);
-
-    }
 
     public void sendHtmlMail(String to,String subject,String content) throws MessagingException {
         MimeMessage mail = javaMailSender.createMimeMessage();
@@ -49,19 +40,5 @@ public class MailService {
 
     }
 
-    public void sendAttachmentsMail(String to,String subject,String content,String filePath) throws MessagingException {
-        MimeMessage mail = javaMailSender.createMimeMessage();
-        MimeMessageHelper mailMessage = new MimeMessageHelper(mail,true);
-        mailMessage.setFrom(fromValue);
-        mailMessage.setTo(to);
-        mailMessage.setSubject(subject);
-        mailMessage.setText(content,true);
-        //添加附件
-        FileSystemResource file = new FileSystemResource(new File(filePath));
-        String fileName = filePath.substring(filePath.lastIndexOf(File.separator));
-        mailMessage.addAttachment(fileName,file);
-
-        javaMailSender.send(mail);
-    }
 
 }

@@ -7,3 +7,18 @@ spring:
     default-encoding: UTF-8
 #    properties.mail.smtp.auth: true
 #    properties.mail.smtp.port: 456 #邮件发送端口
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_boot?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    driverClassName: com.mysql.cj.jdbc.Driver
+  quartz:
+    job-store-type: JDBC #数据库存储quartz任务配置
+    jdbc:
+      initialize-schema: NEVER #自动初始化表结构，第一次启动的时候这里写always
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: org.top.test.entity
+  configuration:
+    #驼峰命名
+    map-underscore-to-camel-case: true
